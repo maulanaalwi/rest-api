@@ -1,0 +1,32 @@
+/* Default sidebar styles */
+#sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar styles when open */
+#sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar styles when closed */
+#sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* Adjust for responsive views */
+@media (max-width: 1024px) {
+  #sidebar {
+    top: 70px; /* Adjust based on header height */
+  }
+  #mainContent {
+    margin-top: 0;
+  }
+}
+
+/* Sidebar is always visible on larger screens */
+@media (min-width: 1024px) {
+  #sidebar {
+    transform: translateX(0); /* Make sure sidebar is visible */
+  }
+}

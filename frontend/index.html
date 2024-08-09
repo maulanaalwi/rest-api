@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media-querry.css">
+  <style>
+    /* Include the CSS from above here */
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-white py-4 px-6 flex items-center justify-between border-2 border-b-slate-300 fixed w-full top-0 z-10 pb-5">
+    <!-- Title -->
+    <h1 class="text-2xl font-bold text-sky-500">Gacor<span class="text-yellow-500">Meme</span></h1>
+
+    <!-- Search Bar -->
+    <i class="fa-solid fa-magnifying-glass ml-14 sm:hidden md:hidden lg:hidden xl:hidden"></i>
+    <div class="flex items-center space-x-4 hidden lg:flex">
+      <input type="text" placeholder="Search..." class="border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <!-- Icons -->
+    <div class="flex items-center space-x-4">
+      <button class="header-icon text-gray-600 hover:text-gray-900">
+        <i class="fas fa-plus"></i>
+      </button>
+      <button class="header-icon text-gray-600 hover:text-gray-900">
+        <i class="fas fa-user"></i>
+      </button>
+      <button class="header-icon text-gray-600 hover:text-gray-900 lg:hidden" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+  </header>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="h-screen bg-white w-[275px] p-5 shadow-md fixed z-20 transform -translate-x-full transition-transform duration-300 ease-in-out border-2 border-r-slate-300 border-t-2 border-slate-300 lg:translate-x-0">
+    <div class="border-2 border-slate-300 px-2 pb-4 text-center rounded-lg">
+      <h1 class="text-xl font-bold mt-6">Mau Ngepost Meme Kamu Sendiri?</h1>
+      <p class="mt-2 text-base text-slate-700">Login Dengan Akun Google Sekarang</p>
+      <div class="mt-3">
+        <a href="form.html">
+          <button class="bg-sky-500 px-5 py-2 rounded-lg text-white font-bold">Login</button>
+        </a>
+      
+      </div>
+    </div>
+    <div class="mb-5">
+      <h1 class="text-2xl font-semibold text-gray-700">Menu</h1>
+    </div>
+    <ul>
+      <li class="mb-4">
+        <a href="#" class="text-gray-700 hover:text-gray-900 block">Home</a>
+      </li>
+      <li class="mb-4">
+        <a href="#" class="text-gray-700 hover:text-gray-900 block">About</a>
+      </li>
+      <li class="mb-4">
+        <a href="#" class="text-gray-700 hover:text-gray-900 block">Services</a>
+      </li>
+      <li class="mb-4">
+        <button class="text-gray-700 hover:text-gray-900 w-full text-left dropdown-toggle focus:outline-none" onclick="toggleDropdown('dropdownMenu1')">Products</button>
+        <ul id="dropdownMenu1" class="hidden pl-4 mt-2">
+          <li class="mb-2">
+            <a href="#" class="text-gray-600 hover:text-gray-800 block">Product 1</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-gray-600 hover:text-gray-800 block">Product 2</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-gray-600 hover:text-gray-800 block">Product 3</a>
+          </li>
+        </ul>
+      </li>
+      <li class="mb-4">
+        <button class="text-gray-700 hover:text-gray-900 w-full text-left dropdown-toggle focus:outline-none" onclick="toggleDropdown('dropdownMenu2')">Contact</button>
+        <ul id="dropdownMenu2" class="hidden pl-4 mt-2">
+          <li class="mb-2">
+            <a href="#" class="text-gray-600 hover:text-gray-800 block">Email</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-gray-600 hover:text-gray-800 block">Phone</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  
+
+  <!-- Main Content -->
+  <div id="mainContent" class="lg:ml-64 mt-20 p-5">
+    <div class="lg:hidden">
+      <button id="hamburgerBtn" onclick="toggleSidebar()" class="bg-blue-500 text-white py-2 px-4 rounded mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- friends -->
+  <div class="container px-3">
+    <div class="bg-sky-200 px-7 py-4 rounded-lg border-2 border-sky-500">
+      <button>
+        <i class="fa-solid fa-user-group text-3xl  text-sky-900"></i>
+        <span class="ml-3 text-xl font-semibold">Masih Belum Punya Teman? Cari teman kamu disini</span>
+      </button>
+    </div>
+  </div>
+
+    <!-- user post -->
+    <div class="mt-7">
+      <div class="flex pl-2">
+        <img src="image/alya.png" alt="" class="w-10 rounded-full">
+        <span class="mt-2 px-2 font-bold">Maulana alwi</span>
+        <span class="mt-2 ml-1">1 hari</span>
+
+  <div class="relative ">
+    <!-- Dropdown Button -->
+    <button onclick="toggleDropdown()" class="p-2 rounded-full text-gray-700 hover:text-gray-900 focus:outline-none ml-28">
+      <i class="fas fa-ellipsis-h"></i> <!-- Font Awesome icon for horizontal ellipsis -->
+    </button>
+    
+    <!-- Dropdown Menu -->
+    <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
+      <ul>
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a>
+        </li>
+      </ul>
+    </div>    
+  </div>
+      </div>
+      <!-- output post image-->
+      <div class="mt-3">
+        <p class="text-xl font-semibold px-2">Bro Lu Ganteng BANGET</p>
+        <img src="image/meme.jpg" alt="" class="mx-auto w-full mt-3">
+    </div>    
+    <!-- genre and comment,like -->
+    <div class="mt-3">
+      <button class="bg-slate-900 text-white px-3 py-1 rounded-xl font-semibold">#dark</button>
+      <button class="bg-yellow-500 px-3 py-1 rounded-xl text-white font-semibold">#Lucu</button>
+      <button class="bg-red-600 text-white px-3 py-1 rounded-xl">#NFSW</button>
+    </div>
+    <br>
+  <script src="sidebar-open.js"></script>
+  <script src="dropdown-user-post.js"></script>
+    <script></script>
+</body>
+
+</html>
